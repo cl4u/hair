@@ -1,0 +1,176 @@
+// 运单详情
+.orderDetailsPage {
+    .itemSelect {
+        width: 215px;
+        // width: 195px;
+    }
+
+    .itemMailno {
+        width: 445px;
+    }
+
+    .dateRange {
+        width: 327px !important;
+        // width: 405px !important;
+    }
+
+    .multipleSelect {
+        width: 330px;
+        // width: 245px;
+    }
+
+    .tableOperationBox {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        align-items: center;
+
+        .operationBtn {
+            margin-left: 10px;
+        }
+    }
+
+    .tdWordBox {
+        width: 280px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        display: inline-block
+    }
+
+    .formValueBox {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            height: 26px;
+            margin-right: 5px;
+        }
+
+        .formValue {
+            color: #1890ff;
+            max-width: 300px;
+            overflow: hidden;
+            display: inline-block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            span {
+                max-width: 300px;
+                overflow: hidden;
+                display: inline-block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+// 运单详情自定义展示列弹窗
+.orderDetailsModel {
+    .modalBox {
+        display: flex;
+        justify-content: space-between;
+
+        .btnBox {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+// 异常运单
+.abnormalPage {
+    .mailnoItem {
+        width: 400px;
+    }
+
+    .dateRangeItem {
+        width: 327px !important;
+    }
+
+    .selectItem {
+        width: 220px;
+    }
+
+    .multipleSelectItem {
+        width: 330px;
+    }
+
+    .tdWordBox {
+        width: 280px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        display: inline-block
+    }
+}
+
+// 超区运单
+.superZonePage {
+    .mailnoItem {
+        width: 400px;
+    }
+
+    .dateRangeItem {
+        width: 327px !important;
+    }
+
+    .selectItem {
+        width: 160px;
+    }
+
+    .inputItem {
+        width: 160px;
+    }
+
+    .multipleSelectItem {
+        width: 200px;
+    }
+
+    .tdWordBox {
+        width: 280px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        display: inline-block
+    }
+}
+
+// 已撤销运单
+.revokedPage {
+    .mailnoItem {
+        width: 400px;
+    }
+
+    .dateRangeItem {
+        width: 327px !important;
+    }
+
+    .selectItem {
+        width: 160px;
+    }
+
+    .inputItem {
+        width: 160px;
+    }
+
+    .multipleSelectItem {
+        width: 200px;
+    }
+
+    .tdWordBox {
+        width: 280px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        display: inline-block
+    }
+}

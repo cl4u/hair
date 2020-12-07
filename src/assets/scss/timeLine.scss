@@ -1,0 +1,74 @@
+.timeLinePage {
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, .65);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    font-feature-settings: "tnum";
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .timeLineItem {
+        margin: 0;
+        font-size: 14px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        .line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 10px;
+
+            .head {
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                border: 2px solid transparent;
+                border-radius: 100px;
+
+                &.gray {
+                    color: rgba(0, 0, 0, .25);
+                    border-color: rgba(0, 0, 0, .25);
+                }
+
+                &.blue {
+                    color: #1890ff;
+                    border-color: #1890ff;
+                }
+
+                &.green {
+                    color: #52c41a;
+                    border-color: #52c41a;
+                }
+
+                &.red {
+                    color: #f5222d;
+                    border-color: #f5222d;
+                }
+            }
+
+            .tail {
+                padding: 0 0 20px;
+                height: calc(100% - 10px);
+                border-left: 2px solid #e8e8e8;
+            }
+        }
+
+        .time {
+            margin: -6px 18px 0 0;
+            padding: 0 0 20px;
+            word-break: break-word;
+            width: 140px;
+        }
+
+        .desc {
+            flex: 1;
+            margin: -6px 0 0 18px;
+            padding: 0 0 20px;
+            word-break: break-word;
+        }
+    }
+}
