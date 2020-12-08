@@ -53,8 +53,11 @@
           @click="chargeback(record)"
           >扣款</a-button
         >
-        <a-button type="primary" size="small" @click="edit(record)"
+        <a-button type="success" size="small" @click="edit(record)" style="margin-right: 15px"
           >编辑</a-button
+        >
+        <a-button type="danger" size="small" @click="del(record.member_id)"
+          >删除</a-button
         >
       </template>
     </a-table>
@@ -209,6 +212,30 @@ export default {
       };
       this.modifyObj = JSON.parse(JSON.stringify(data));
     },
+    del(id) {
+      let self = this,params = {};
+      params = {
+        member_id: id
+      }
+      self.$confirm({
+        title: "确定要删除此条信息？",
+        onOk() {
+          self.$axios
+          .post("http://localhost:3000/api/Stu/delStu", params)
+          .then((res) => {
+              if (res.status == 200) {
+                self.$message.success('删除成功');
+                self.getTableData(true);
+              } else {
+                self.$message.error('系统出错了');
+              }
+            });
+        },
+        okText: "确定",
+        cancelText: "取消",
+        centered: true,
+      });
+    }
   },
 };
 </script>

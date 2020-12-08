@@ -74,6 +74,21 @@ router.post('/updateStu', (req, res) => {
   })
 })
 
+// 接口：删除信息
+router.post('/delStu', (req, res) => {
+  const sql = $sql.Stu.del
+  const params = req.body
+  console.log('删除', params)
+  conn.query(sql, [params.member_id], function (err, result) {
+    if (err) {
+      console.log(err)
+    }
+    if (result) {
+      jsonWrite(res, result)
+    }
+  })
+})
+
 // 接口：充值
 router.post('/charge', (req, res) => {
   const sql = $sql.Stu.chargeUpdate
