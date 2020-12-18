@@ -111,6 +111,7 @@ export default {
       modifyObj: {},
       merchant_text: ["洗发", "剪发", "染发", "烫发"],
       memberList: [],
+      teleList: []
     };
   },
   mounted() {
@@ -142,6 +143,7 @@ export default {
         params = { telephone: this.telephone };
       this.pageTableLoading = true;
       this.tableData = [];
+      this.teleList = [];
       this.$axios
         .post("http://localhost:3000/api/Stu/search", params)
         .then((res) => {
@@ -152,6 +154,7 @@ export default {
               for (let i = 0; i < res.data.length; i++) {
                 self.tableView = res.data;
                 const element = res.data[i];
+                self.teleList.push(element.telephone);
                 element.key = (i + 1).toString();
                 element.merchant_type = self.merchant_text[element.type - 1];
                 element.date = element.date
@@ -209,6 +212,7 @@ export default {
     edit(data) {
       this.editDialog = {
         isShow: true,
+        list: this.teleList
       };
       this.modifyObj = JSON.parse(JSON.stringify(data));
     },

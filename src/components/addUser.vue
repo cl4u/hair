@@ -81,8 +81,6 @@ export default {
       let self = this,params = {},list = this.data.list;
       this.addProxyForm.validateFields((err, values) => {
         if (!err) {
-          self.addProxyForm.resetFields();
-          self.data.isShow = false;
           params = values;
           for (let i = 0;i<list.length;i++) {
             if (list[i] == values.telephone) {
@@ -98,6 +96,8 @@ export default {
             } else {
               self.$message.error('系统出错了');
             }
+            self.data.isShow = false;
+            self.addProxyForm.resetFields();
           })
         }
       });

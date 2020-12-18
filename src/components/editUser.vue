@@ -54,11 +54,14 @@ export default {
   methods: {
     handleOk() {
       let self = this,params = {};
-      this.data.isShow = false;
       params = {
         member_id: this.modifyObj.member_id,
         telephone: this.modifyObj.telephone,
         balance: this.modifyObj.balance
+      }
+      if(self.data.list.indexOf(self.modifyObj.telephone*1) > -1){//则包含该元素
+        self.$message.error('该手机号已经登记过了');
+        return ;
       }
       self.$axios.post("http://localhost:3000/api/Stu/updateStu", params).then(res => {
         if (res.status == 200) {
@@ -67,6 +70,7 @@ export default {
         } else {
           self.$message.error('系统出错了');
         }
+        self.data.isShow = false;
       })
     },
     handleCancel() {

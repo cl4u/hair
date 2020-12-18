@@ -29,11 +29,11 @@ const routes = [
       },
     ]
   },
-  // {
-  //   path: '/Login',
-  //   name: 'Login',
-  //   component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
-  // },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
+  },
 ]
 
 const router = new VueRouter({
@@ -43,10 +43,17 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.name === null) {
-    next({ name: 'Home' })
-  } else {
+  let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+  if (to.name == "Login") {
     next()
+  } else if (to.name == "Home") {
+    next({ name: 'MemberCenter' })
+  } else {
+    if (userInfo && userInfo.account) {
+      next()
+    } else {
+      next({ name: 'Login' })
+    }
   }
 })
 

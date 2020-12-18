@@ -1,9 +1,9 @@
 <template>
   <a-layout class="appLayout">
     <a-layout-sider :trigger="null" collapsible class="appLayoutSider">
-      <div class="welcomeBox">
-        <img src="@/assets/img/Login/logo.png" class="logoImg" style="height:70px;width:200px"/>
-      </div>
+        <!-- <div class="welcomeBox">
+          <img src="@/assets/img/Login/logo.png" class="logoImg" style="height:70px;width:200px"/>
+        </div> -->
       <template>
         <el-menu
           background-color="#001529"

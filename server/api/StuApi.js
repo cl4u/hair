@@ -118,4 +118,18 @@ router.post('/deductibles', (req, res) => {
     }
   })
 })
+
+// 接口：登录
+router.post('/login', (req, res) => {
+  const sql = $sql.Stu.login
+  const params = req.body
+  conn.query(sql, [params.account, params.password], function (err, result) {
+    if (err) {
+      console.log(err)
+    }
+    if (result) {
+      jsonWrite(res, result)
+    }
+  })
+})
 module.exports = router;

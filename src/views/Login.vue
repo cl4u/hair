@@ -55,7 +55,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Login",
   data() {
@@ -79,12 +78,25 @@ export default {
   },
   methods: {
     handleSubmit() {
-      let vm = this;
+      let vm = this,
+        params = {};
       this.form.validateFields((err, values) => {
         if (!err) {
-          if (values.username == 'admin' && values.password == '123456') {
-            vm.$router.push({ name: "Home" });
-          }
+          params = {
+            account: values.username,
+            password: values.password,
+          };
+          vm.$axios
+            .post("http://localhost:3000/api/Stu/login", params)
+            .then((res) => {
+              if (res.status == 200) {
+                vm.$message.success("登录成功");
+                window.sessionStorage.setItem("userInfo", JSON.stringify(params));
+                vm.$router.push({ name: "Home" });
+              } else {
+                vm.$message.error("系统出错了");
+              }
+            });
         }
       });
     },

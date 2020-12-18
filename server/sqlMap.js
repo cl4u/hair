@@ -12,6 +12,7 @@ const sqlMap = {
     chargeUpdate: "update member set balance = balance + ? where member_id = ?",
     deductiblesUpdate: "update member set balance = balance - ?, type = ?, date = ? where member_id = ?",
     search: "select * from member where telephone = ?",
+    login: "select account,password from user where account = ?  and password = ?"
   }
 }
 module.exports = sqlMap;
